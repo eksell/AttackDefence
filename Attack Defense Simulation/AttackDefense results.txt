@@ -1,0 +1,29 @@
+
+Attackers strategy and results:
+Strat:[0, 0, 0] Result: 17 - 10
+Strat:[0, 0, 1] Result: 18 - 9
+Strat:[0, 0, 2] Result: 17 - 10
+Strat:[0, 1, 0] Result: 16 - 11
+Strat:[0, 1, 1] Result: 14 - 13
+Strat:[0, 1, 2] Result: 14 - 13
+Strat:[0, 2, 0] Result: 18 - 9
+Strat:[0, 2, 1] Result: 14 - 13
+Strat:[0, 2, 2] Result: 15 - 12
+Strat:[1, 0, 0] Result: 16 - 11
+Strat:[1, 0, 1] Result: 14 - 13
+Strat:[1, 0, 2] Result: 14 - 13
+Strat:[1, 1, 0] Result: 13 - 14
+Strat:[1, 1, 1] Result: 7 - 20
+Strat:[1, 1, 2] Result: 9 - 18
+Strat:[1, 2, 0] Result: 13 - 14
+Strat:[1, 2, 1] Result: 10 - 17
+Strat:[1, 2, 2] Result: 11 - 16
+Strat:[2, 0, 0] Result: 18 - 9
+Strat:[2, 0, 1] Result: 14 - 13
+Strat:[2, 0, 2] Result: 15 - 12
+Strat:[2, 1, 0] Result: 13 - 14
+Strat:[2, 1, 1] Result: 10 - 17
+Strat:[2, 1, 2] Result: 11 - 16
+Strat:[2, 2, 0] Result: 15 - 12
+Strat:[2, 2, 1] Result: 11 - 16
+Strat:[2, 2, 2] Result: 10 - 17

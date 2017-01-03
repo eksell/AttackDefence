@@ -30,51 +30,75 @@ public class Game {
 
 	void run(){
 		//set settings and run game until all possibilities have been calculated
+		System.out.println("ATTACKER RESULTS:");
 		initPlayers(0,1);
 		round();
-	
-		System.out.println("SWAP SIDES");
+
+		
+		System.out.println("DEFENDER RESULTS:");
 		initPlayers(1,0);
 		round();
 	}
 
 	void round(){
-		
+
 		int totalWon = 0, totalLost = 0; 
 		List<String> totalScore = new ArrayList<String>(); 
-		
-		while(!p1.done){
-			while(!p2.done){
+
+		while(!p1.done && p1.isAttacker() || !p2.done && p2.isAttacker()){
+			while(!p1.done && !p1.isAttacker() || !p2.done && !p2.isAttacker()){
 				//				System.out.println("Strat: "+Arrays.toString(p1.nextStrat()));
 
 				for(int roundCount = 0; roundCount < 3; roundCount++){
 					distPoints(p1.getStrat()[roundCount],p2.getStrat()[roundCount]);
 
 					if(p1.getScore() > 4){
-						totalWon++;
+						if(p1.isAttacker()){
+							totalWon++;
+						}else totalLost++;
+
 						break;
 					}
 					else if(p2.getScore() > 4|| roundCount == 2){
-						totalLost++;
+						if(p2.isAttacker()){
+							totalWon++;
+						}else totalLost++;
 						break;
 					}
+
+
 
 				}
 
 				p1.reset();
 				p2.reset();
-				p2.nextStrat();
+				if(p1.isAttacker())	p2.nextStrat();
+				else p1.nextStrat();
 			}
 
-			totalScore.add("Strat:"+Arrays.toString(p1.getStrat())+" Result: "+totalWon+" - "+totalLost);
+			String strat;
+			if(p1.isAttacker())
+				strat = Arrays.toString(p1.getStrat());
+			else 
+				strat = Arrays.toString(p2.getStrat());
+
+			totalScore.add("Strat:"+strat+" Result: "+totalWon+" - "+totalLost);
 			totalWon = 0;
 			totalLost = 0;
-			p1.nextStrat();
-			p2.done = false;
+
+			if(p1.isAttacker()){
+				p1.nextStrat();
+				p2.done = false;
+			}
+			else{
+				p2.nextStrat();
+				p1.done = false;
+			}
+
 		}
-		
+
 		Iterator<String> scoreIterator = totalScore.iterator();
-		
+
 		while(scoreIterator.hasNext()){
 			System.out.println(scoreIterator.next());
 		}

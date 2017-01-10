@@ -8,7 +8,7 @@ public class Agent {
 	boolean won = false;
 	private int id;
 	protected boolean done;
-	
+
 	public Agent(int id){
 		score = 0;
 		done = false;
@@ -110,7 +110,7 @@ public class Agent {
 				}
 			}
 		}
-		
+
 		//System.out.println(Arrays.toString(choiceArray));
 		return choiceArray;
 	}
@@ -118,7 +118,7 @@ public class Agent {
 	public int[] getStrat() {
 		return choiceArray;
 	}
-	
+
 	boolean isAttacker(){
 		if(id == 0) return true;
 		else if(id == 1) return false;

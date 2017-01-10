@@ -34,7 +34,7 @@ public class Game {
 		initPlayers(0,1);
 		round();
 
-		
+
 		System.out.println("DEFENDER RESULTS:");
 		initPlayers(1,0);
 		round();
@@ -65,9 +65,6 @@ public class Game {
 						}else totalLost++;
 						break;
 					}
-
-
-
 				}
 
 				p1.reset();
@@ -108,4 +105,5 @@ public class Game {
 		p1.addPoints(results[0][x][y]);
 		p2.addPoints(results[1][x][y]);
 	}
+
 }
